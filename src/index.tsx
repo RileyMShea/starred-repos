@@ -30,7 +30,7 @@ const authLink = setContext((_, { headers }) => {
     headers: {
       ...headers,
       // authorization: token ? `Bearer https://api.github.com/graphql` : '',
-      authorization: `Bearer ${process.env.GH_TOKEN}`,
+      authorization: `Bearer ${process.env.REACT_APP_GH_TOKEN}`,
     },
   };
 });
