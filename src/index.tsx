@@ -29,7 +29,7 @@ const authLink = setContext((_, { headers }) => {
     headers: {
       ...headers,
       // authorization: token ? `Bearer https://api.github.com/graphql` : '',
-      authorization: `Bearer 1bbaad450cf227c8a5ffbbcef928cf56b77f898d`,
+      authorization: `Bearer  31614d79f2d0f694122f3e80bea1ffb3dcdc7d80`,
     },
   };
 });
