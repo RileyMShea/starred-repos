@@ -16,6 +16,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+require('dotenv').config();
 
 const httpLink = createHttpLink({
   uri: 'https://api.github.com/graphql',
@@ -29,7 +30,7 @@ const authLink = setContext((_, { headers }) => {
     headers: {
       ...headers,
       // authorization: token ? `Bearer https://api.github.com/graphql` : '',
-      authorization: `Bearer d1ba9f835a0a2b7a00e1c441f6058d3f45863293`,
+      authorization: `Bearer ${process.env.GH_TOKEN}`,
     },
   };
 });
