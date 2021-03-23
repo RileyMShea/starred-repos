@@ -1,0 +1,22 @@
+overwrite: true
+
+schema:
+  - ./graphql.schema.json
+# schema:
+#   - https://api.github.com/graphql:
+#       headers:
+#         Authorization: "Bearer 1bbaad450cf227c8a5ffbbcef928cf56b77f898d"
+documents: 'src/**/*.graphql'
+generates:
+  src/generated/graphql.tsx:
+    plugins:
+      - 'typescript'
+      - 'typescript-operations'
+      - 'typescript-react-apollo'
+      # - 'typescript-graphql-files-modules'
+      # - 'typescript-document-nodes'
+    config:
+      experimentalFragmentVariables: true
+  ./graphql.schema.json:
+    plugins:
+      - 'introspection'

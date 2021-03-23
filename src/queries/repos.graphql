@@ -1,0 +1,35 @@
+query Stuff {
+  user(login: "rileymshea") {
+    email
+    avatarUrl
+    starredRepositories(
+      first: 100
+      orderBy: { field: STARRED_AT, direction: DESC }
+    ) {
+      nodes {
+        name
+        description
+        url
+        homepageUrl
+        latestRelease {
+          publishedAt
+        }
+        defaultBranchRef {
+          name
+          target {
+            ... on Commit {
+              history(first: 0) {
+                commits: totalCount
+              }
+            }
+          }
+        }
+        stargazerCount
+        createdAt
+        primaryLanguage {
+          name
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+documents: ./src/queries/*.graphql
+schema:
+  - ./graphql.schema.json
+  # - https://api.github.com/graphql:
+  #     headers:
+  #       Authorization: 'Bearer 1bbaad450cf227c8a5ffbbcef928cf56b77f898d'
